@@ -61,4 +61,4 @@ Dacă oricând de la pornirea încărcării până la finalizarea acesteia este 
 
 ### Stop ###
 
-[Watch Tema1Stop Video](video/Tema1Stop.mp4)
+[Watch Tema1Stop Video](Video/Tema1Stop.mp4)
