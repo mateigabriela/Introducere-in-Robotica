@@ -13,16 +13,25 @@
 - Breadboard
 - Linii de legătură
 
-![Schema Tinkercad](Imagini/Schema-Tinkercad.png)
+### Model ###
+![ModelTema1](Imagini/ModelTema1.png)
+
+### Imagini cu circuitul realizat ###
+
+![Tema1Poza1](Imagini/Tema1Poza1.png)
+![Tema1Poza2](Imagini/Tema1Poza2.png)
+![Tema1Poza3](Imagini/Tema1Poza3.png)
+![Tema1Poza4](Imagini/Tema1Poza4.png)
+![Tema1Poza5](Imagini/Tema1Poza5.png)
 
 ### 1.3 Detalii tehnice ###
-- (1p) Led-ul RGB reprezintă disponibilitatea stației. Dacă stația este liberă led-ul va fi verde, iar dacă stația este ocupată se va face roșu.
+ Led-ul RGB reprezintă disponibilitatea stației. Dacă stația este liberă led-ul va fi verde, iar dacă stația este ocupată se va face roșu.
 
-- (2p) Led-urile simple reprezintă gradul de încărcare al bateriei, pe care îl vom simula printr-un loader progresiv (L1 = 25%, L2 = 50%, L3 = 75%, L4 = 100%). Loader-ul se încărca prin aprinderea succesivă a led-urilor, la un interval fix de 3s. LED-ul care semnifică procentul curent de încărcare va avea starea de clipire, LED-urile din urma lui fiind aprinse continuu, iar celelalte stinse.
+- Led-urile simple reprezintă gradul de încărcare al bateriei, pe care îl vom simula printr-un loader progresiv (L1 = 25%, L2 = 50%, L3 = 75%, L4 = 100%). Loader-ul se încărca prin aprinderea succesivă a led-urilor, la un interval fix de 3s. LED-ul care semnifică procentul curent de încărcare va avea starea de clipire, LED-urile din urma lui fiind aprinse continuu, iar celelalte stinse.
 
-- (1p) Apăsarea scurtă a butonului de start va porni încărcarea. Apăsarea acestui buton în timpul încărcării nu va face nimic.
+- Apăsarea scurtă a butonului de start va porni încărcarea. Apăsarea acestui buton în timpul încărcării nu va face nimic.
 
-- (2p) Apăsarea lungă a butonului de stop va opri încărcarea forțat și va reseta stația la starea liberă. Apăsarea acestui buton cat timp stația este liberă nu va face nimic.
+- Apăsarea lungă a butonului de stop va opri încărcarea forțat și va reseta stația la starea liberă. Apăsarea acestui buton cat timp stația este liberă nu va face nimic.
 
 ### 1.4 Flow ###
 Starea stației este ‘liberă’. Loader-ul este stins, iar led-ul pentru disponibilitate este verde.
@@ -42,3 +51,10 @@ Led-ul pentru disponibilitate se face verde.
 Dacă oricând de la pornirea încărcării până la finalizarea acesteia este apăsat lung (min 1s) butonul de stop, încărcarea se întrerupe prin animația de final (toate led-urile clipesc de 3 ori), iar led-ul pentru disponibilitate devine verde.
 
 ## Demo video cu funcționalitatea temei ##
+
+### Start ###
+![Watch Tema1Start Video](video/Tema1Start.mp4)
+
+### Stop ###
+
+[Watch Tema1Stop Video](video/Tema1Stop.mp4)
