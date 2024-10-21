@@ -18,11 +18,11 @@
 
 ### Imagini cu circuitul realizat ###
 
-![Tema1Poza1](Imagini/Tema1Poza1.png)
-![Tema1Poza2](Imagini/Tema1Poza2.png)
-![Tema1Poza3](Imagini/Tema1Poza3.png)
-![Tema1Poza4](Imagini/Tema1Poza4.png)
-![Tema1Poza5](Imagini/Tema1Poza5.png)
+![Tema1Poza1](Imagini/Tema1Poza1.jpg)
+![Tema1Poza2](Imagini/Tema1Poza2.jpg)
+![Tema1Poza3](Imagini/Tema1Poza3.jpg)
+![Tema1Poza4](Imagini/Tema1Poza4.jpg)
+![Tema1Poza5](Imagini/Tema1Poza5.jpg)
 
 ### 1.3 Detalii tehnice ###
  Led-ul RGB reprezintă disponibilitatea stației. Dacă stația este liberă led-ul va fi verde, iar dacă stația este ocupată se va face roșu.
@@ -53,7 +53,11 @@ Dacă oricând de la pornirea încărcării până la finalizarea acesteia este 
 ## Demo video cu funcționalitatea temei ##
 
 ### Start ###
-![Watch Tema1Start Video](video/Tema1Start.mp4)
+<video width="600" controls>
+  <source src="https://user-images.githubusercontent.com/6877923/115474571-03c75800-a23e-11eb-8096-8973aad5fa9f.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 
 ### Stop ###
 
