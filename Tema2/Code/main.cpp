@@ -19,6 +19,9 @@ int correctWordsCount = 0;
 const int roundDuration = 30000;
 const int zero = 0;
 const int fiveHundred = 500;
+const int easyTime = 6000;
+const int mediumTime = 4000;
+const int hardTime = 2000;
 
 // Debouncing and difficulty change
 unsigned long lastDifficultyChangeTime = 0;
@@ -61,13 +64,13 @@ void startRound() {
 
   switch (currentDifficulty) {
     case EASY:
-      wordDisplayInterval = 6000;
+      wordDisplayInterval = easyTime;
       break;
     case MEDIUM:
-      wordDisplayInterval = 4000;
+      wordDisplayInterval = mediumTime;
       break;
     case HARD:
-      wordDisplayInterval = 2000;
+      wordDisplayInterval = hardTime;
       break;
   }
 
@@ -107,15 +110,15 @@ void changeDifficulty() {
 
   switch (currentDifficulty) {
     case EASY:
-      wordDisplayInterval = 6000;
+      wordDisplayInterval = easyTime;
       Serial.println("Easy mode on!");
       break;
     case MEDIUM:
-      wordDisplayInterval = 4000;
+      wordDisplayInterval = mediumTime;
       Serial.println("Medium mode on!");
       break;
     case HARD:
-      wordDisplayInterval = 2000;
+      wordDisplayInterval = hardTime;
       Serial.println("Hard mode on!");
       break;
   }
@@ -156,7 +159,6 @@ void setup() {
   
   Serial.print("\nWelcome to the Typing Game! Press the Start/Stop button to begin.\n");
 
-  // Attach interrupts
   attachInterrupt(digitalPinToInterrupt(startStopButtonPin), startStopISR, FALLING);
   attachInterrupt(digitalPinToInterrupt(difficultyButtonPin), difficultyISR, FALLING);
 }
