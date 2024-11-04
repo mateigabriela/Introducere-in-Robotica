@@ -52,6 +52,8 @@ In this assignment, you will create a game similar to TypeRacer.
 # Model
 ## Tinkercad
 
+<img src="Images/ModelTema2.jpg" width="685" alt="ModelTema2"/>
+
 ## [Tinkercad link](https://www.tinkercad.com/things/ejPXIBgKgnp-typeracer?sharecode=EwFlwbNyuTstc3OYzn3IYzzZg6adNmzivf2CG5wIEJo)
 
 ## Physical
@@ -64,6 +66,7 @@ In this assignment, you will create a game similar to TypeRacer.
 <img src="Images/Tema2Poza4.jpg" width="685" alt="Tema2Poza4"/>
 
 ### Video of functionality 
+https://github.com/user-attachments/assets/5266d960-91ae-491f-966d-b919bfa39578
 
 
 
