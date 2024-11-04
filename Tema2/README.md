@@ -52,7 +52,7 @@ In this assignment, you will create a game similar to TypeRacer.
 # Model
 ## Tinkercad
 
-<img src="Images/ModelTema2.jpg" width="685" alt="ModelTema2"/>
+<img src="Images/ModelTema2.png" width="685" alt="ModelTema2"/>
 
 ## [Tinkercad link](https://www.tinkercad.com/things/ejPXIBgKgnp-typeracer?sharecode=EwFlwbNyuTstc3OYzn3IYzzZg6adNmzivf2CG5wIEJo)
 
