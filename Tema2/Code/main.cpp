@@ -10,9 +10,9 @@ const int startStopButtonPin = 2;
 const int difficultyButtonPin = 3;
 
 // Game state variables
-bool gameRunning = false;
-bool buttonPressed = false;
-bool difficultyButtonPressed = false;
+volatile bool gameRunning = false;
+volatile bool buttonPressed = false;
+volatile bool difficultyButtonPressed = false;
 unsigned long roundStartTime = 0;
 unsigned long currentWordTime = 0;
 int correctWordsCount = 0;
@@ -33,7 +33,8 @@ const char* words[] = {
   "arduino", "robot", "code", "led", "sensor", "button", "computer", "programming", "microcontroller", "display",
   "keyboard", "mouse", "monitor", "circuit", "resistor", "capacitor", "transistor", "breadboard", "voltage", "current",
   "resistance", "power", "frequency", "oscillator", "amplifier", "diode", "inductor", "relay", "switch", "battery"
-};const int wordsCount = sizeof(words) / sizeof(words[0]);
+};
+const int wordsCount = sizeof(words) / sizeof(words[0]);
 String currentWord = "";
 bool newWordGenerated = false;
 String inputWord = "";
@@ -122,6 +123,22 @@ bool isWordCorrect(const String& inputWord) {
   return inputWord.equals(currentWord);
 }
 
+// ISR for Start/Stop button
+void startStopISR() {
+  if (millis() - lastDifficultyChangeTime > debounceInterval) {
+    buttonPressed = true;
+    lastDifficultyChangeTime = millis();
+  }
+}
+
+// ISR for Difficulty button
+void difficultyISR() {
+  if (millis() - lastDifficultyChangeTime > debounceInterval) {
+    difficultyButtonPressed = true;
+    lastDifficultyChangeTime = millis();
+  }
+}
+
 void setup() {
   pinMode(redPin, OUTPUT);
   pinMode(greenPin, OUTPUT);
@@ -133,37 +150,27 @@ void setup() {
   Serial.begin(9600);
 
   setLEDColor(255, 255, 255);
+  
+  Serial.print("\nWelcome to the Typing Game! Press the Start/Stop button to begin.\n");
+
+  // Attach interrupts
+  attachInterrupt(digitalPinToInterrupt(startStopButtonPin), startStopISR, FALLING);
+  attachInterrupt(digitalPinToInterrupt(difficultyButtonPin), difficultyISR, FALLING);
 }
 
 void loop() {
-  Serial.print("Welcome to the Typing Game! Press the Start/Stop button to begin.\n");
-
-  if (digitalRead(startStopButtonPin) == LOW) {
-    if (!buttonPressed && millis() - lastDifficultyChangeTime > debounceInterval) {
-      lastDifficultyChangeTime = millis();
-      buttonPressed = true;
-
-      if (!gameRunning) {
-        startRound();
-      } else {
-        stopRound();
-      }
-    }
-  } else {
+  if (buttonPressed) {
     buttonPressed = false;
+    if (!gameRunning) {
+      startRound();
+    } else {
+      stopRound();
+    }
   }
 
-  if (digitalRead(difficultyButtonPin) == LOW) {
-    if (!difficultyButtonPressed && millis() - lastDifficultyChangeTime > debounceInterval) {
-      lastDifficultyChangeTime = millis();
-      difficultyButtonPressed = true;
-      changeDifficulty();
-    }
-  } else {
-    if (difficultyButtonPressed) {
-      lastDifficultyChangeTime = millis();
-    }
+  if (difficultyButtonPressed) {
     difficultyButtonPressed = false;
+    changeDifficulty();
   }
 
   if (gameRunning) {
