@@ -66,6 +66,7 @@ In this assignment, I created a game similar to TypeRacer.
 <img src="Images/Tema2Poza4.jpg" width="685" alt="Tema2Poza4"/>
 
 ### Video of functionality 
+
 https://github.com/user-attachments/assets/5266d960-91ae-491f-966d-b919bfa39578
 
 
