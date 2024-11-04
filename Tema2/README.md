@@ -133,6 +133,8 @@ unsigned long currentWordTime = 0;
 int correctWordsCount = 0;
 const int roundDuration = 30000;
 const int zero = 0;
+const int fiveHundred = 500;
+
 
 // Debouncing and difficulty change
 unsigned long lastDifficultyChangeTime = 0;
@@ -185,11 +187,14 @@ void startRound() {
       break;
   }
 
+  unsigned long countdownStart = millis();
   for (int i = 3; i > 0; i--) {
     setLEDColor(255, 255, 255);
-    delay(500);
+    while (millis() - countdownStart < fiveHundred) {}
     setLEDColor(0, 0, 0);
-    delay(500);
+    countdownStart = millis();
+    while (millis() - countdownStart < fiveHundred) {}
+    countdownStart = millis();
     Serial.println(i);
   }
 
