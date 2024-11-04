@@ -3,7 +3,7 @@
 ## Requirements
 
 ### 2.1 Description
-In this assignment, you will create a game similar to TypeRacer.
+In this assignment, I created a game similar to TypeRacer.
 
 ### 2.2 Components
 - **Arduino UNO** (ATmega328P microcontroller)
