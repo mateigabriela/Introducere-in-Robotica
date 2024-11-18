@@ -172,3 +172,5 @@ This project was developed using Arduino, LiquidCrystal, and Servo libraries.
 # Videos
 
 https://github.com/user-attachments/assets/66cd9977-3414-4f3b-a57a-d5a304215ba8
+https://github.com/user-attachments/assets/5cbd6854-b991-43aa-813a-ea5a37bab8b4
+
