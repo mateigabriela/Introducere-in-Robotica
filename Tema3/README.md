@@ -162,4 +162,13 @@ The game involves two players pressing a button to react to color changes on the
 ## Credits
 This project was developed using Arduino, LiquidCrystal, and Servo libraries.
  
+# Images
 
+![Master Setup](Pictures/PozaMaster.jpg)
+![Slave Setup 1](Pictures/PozaSlave1.jpg)
+![Slave Setup 2](Pictures/PozaSlave2.jpg)
+![Tinkercad Diagram](Pictures/Tema3Tinkercad.png)
+
+# Videos
+
+https://github.com/user-attachments/assets/66cd9977-3414-4f3b-a57a-d5a304215ba8
