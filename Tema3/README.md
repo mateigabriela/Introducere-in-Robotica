@@ -80,3 +80,86 @@ This project involves creating a competitive reflex game for two players, testin
 - Divide the code into multiple files (`.h/.hpp` and `.c/.cpp`) for better team collaboration.
 - Pins A0-A6 can also be used as digital pins if necessary, even after button multiplexing.
 
+# Code
+
+# Arduino Game with RGB LEDs and Servo Control
+
+## Overview
+This project is composed of two main parts:
+1. A reaction time game with two players using RGB LEDs and analog sensors (A0, A1) to detect colors.
+2. A servo control system that moves a servo motor and displays the movement on an LCD screen.
+
+The game involves two players pressing a button to react to color changes on the RGB LEDs, while the servo motor is controlled and displayed on an LCD screen.
+
+## Components Used
+- **RGB LEDs** (connected to pins A0, A1 for Player 1 and Player 2)
+- **Analog sensors** (A0, A1) for detecting color inputs
+- **Servo motor** (connected to pin 10)
+- **LCD Display** (connected to pins 2, 3, 4, 5, 11, and 12)
+- **Start Button** (connected to pin A2)
+
+## Game Logic
+- Each player has an RGB LED and an analog color sensor.
+- The game starts by pressing the start button. The LED on each player's side changes to a random color.
+- Players have to react quickly by pressing the correct color sensor when the LED matches their color.
+- The time taken to react is recorded, and points are awarded based on the reaction time.
+- The game continues for 3 rounds, and the player with the highest score at the end wins.
+- The total score is displayed in the serial monitor, and the round details are logged.
+
+## Servo Control
+- A servo motor is used to demonstrate simple movement controlled by the Arduino.
+- The servo moves from 0 to 180 degrees and back to 0, with the angle being displayed on an LCD screen.
+- The movement of the servo is accompanied by graphical animations on the LCD.
+
+## Code Explanation
+
+### Game Setup
+- The pins for the RGB LEDs are defined for both Player 1 and Player 2 (A0, A1).
+- The game is initiated by pressing the start button (A2).
+- The game checks the analog inputs from the sensors (A0 and A1) to detect colors and check the player's reaction time.
+- The reaction time is compared to predefined thresholds, and points are awarded accordingly.
+
+### Servo Control Setup
+- The servo motor is controlled with pin 10 and is moved from 0 to 180 degrees.
+- The LCD screen displays a graphical animation as the servo moves.
+
+### Functions
+- **`turnOffAllLEDs()`**: Turns off all LEDs.
+- **`setRandomColor_A0()`**: Sets a random color on Player 1's RGB LED.
+- **`setRandomColor_A1()`**: Sets a random color on Player 2's RGB LED.
+- **`checkStartButtonPress()`**: Detects when the start button is pressed.
+- **`calculatePoints()`**: Calculates points based on reaction time.
+- **`checkButtonAndSetLED_A0()`**: Checks if Player 1 pressed the correct button for the current color.
+- **`checkButtonAndSetLED_A1()`**: Checks if Player 2 pressed the correct button for the current color.
+
+### Servo Motor Control
+- **`myservo.write()`**: Controls the angle of the servo motor.
+- **LCD Animations**: Several animations are created using the `lcd_1.setCursor()` and `lcd_1.write()` functions to display a visual representation of the servo control.
+
+### Main Loop
+- The main loop continuously checks the game status and updates the display.
+- The game runs for a set duration, and the scores are reset after each round.
+
+## Wiring Diagram
+- **RGB LEDs**: Connected to the specified pins for both Player 1 and Player 2.
+- **Analog Sensors**: Connected to analog inputs A0 and A1 to detect color.
+- **Start Button**: Connected to pin A2 with a pull-up resistor.
+- **Servo Motor**: Connected to pin 10.
+- **LCD**: Connected to pins 2, 3, 4, 5, 11, and 12 for display control.
+
+## Usage
+1. Connect all components as per the wiring diagram.
+2. Upload the code to your Arduino.
+3. Press the start button to begin the game.
+4. React to the color changes by pressing the correct button corresponding to the LED color.
+5. Watch the servo move while the LCD displays the angle and animation.
+6. Check the serial monitor for scores at the end of each round.
+
+## Notes
+- This code assumes that the start button is connected to pin A2 and is pulled HIGH by default (input_pullup).
+- The reaction time thresholds are set to different levels, awarding higher points for faster responses.
+
+## Credits
+This project was developed using Arduino, LiquidCrystal, and Servo libraries.
+ 
+
